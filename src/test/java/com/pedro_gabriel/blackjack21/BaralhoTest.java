@@ -1,7 +1,3 @@
-
-
-
-
 package test.java.com.pedro_gabriel.blackjack21;
 
 import org.junit.jupiter.api.Test;
