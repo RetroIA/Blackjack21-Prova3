@@ -42,5 +42,29 @@ public class JogadorTest {
         jogador.limparCartas();
         assertEquals(0, jogador.getCartas().size());
     }
+    @Test
+    public void testSetNomeJogador() {
+        Jogador jogador = new Jogador("Teste");
+        jogador.setNome("NovoNome");
+        assertEquals("NovoNome", jogador.getNome());
+    }
 
+    
+    @Test
+    public void testBotFicar() {
+        Bot bot = new Bot("Teste");
+        Carta carta = new Carta("K", "O");
+        bot.receberCarta(carta);
+        bot.receberCarta(carta);
+        assertFalse(bot.deveBater(6)); 
+    }
+
+    
+    @Test
+    public void testBotBater() {
+        Bot bot = new Bot("Teste");
+        Carta carta = new Carta("6", "O");
+        bot.receberCarta(carta);
+        assertTrue(bot.deveBater(10)); // Assume que a carta visível do jogador é 10
+    }
 }
